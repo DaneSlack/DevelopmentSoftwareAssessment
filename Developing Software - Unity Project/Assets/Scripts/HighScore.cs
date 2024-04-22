@@ -19,10 +19,6 @@ public class HighScore : MonoBehaviour
     public TMP_Text[] highScoreNameDisplays;
     [SerializeField]
     public bool highScoreAchieved = false;
-    [SerializeField]
-    int playerScore;
-    [SerializeField]
-    string playerName;
 
     void Start()
     {
@@ -38,8 +34,6 @@ public class HighScore : MonoBehaviour
         //Declare Varibles
         int newScore;
         string newName;
-        int highScore;
-        string highScoreName;
 
         //READ playerScore and playerName variables from Unity PlayerPrefs
         int playerScore = PlayerPrefs.GetInt("playerScore");
@@ -50,12 +44,12 @@ public class HighScore : MonoBehaviour
         newName = playerName;
 
         //FOR scoreIndex from 0 to 2
-        for (int scoreIndex = 0; scoreIndex < 2; scoreIndex++)
+        for (int scoreIndex = 0; scoreIndex <= 2; scoreIndex++)
         {
 
             //READ highScore and highScoreName variables from Unity PlayerPrefs using the scoreIndex
-            highScore = PlayerPrefs.GetInt("highScore" + scoreIndex);
-            highScoreName = PlayerPrefs.GetString("highScoreName" + scoreIndex);
+            int highScore = PlayerPrefs.GetInt("highScore" + scoreIndex);
+            string highScoreName = PlayerPrefs.GetString("highScoreName" + scoreIndex);
 
             //IF newScore is greater than highScore THEN
             if (newScore > highScore)
