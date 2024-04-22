@@ -1,29 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
 using TMPro;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
     //Declare Varibles
     [SerializeField]
-    TMP_Text messageDisplay;
+    public TMP_Text messageDisplay;
     [SerializeField]
-    TMP_Text playerNameDisplay;
+    public TMP_Text playerNameDisplay;
     [SerializeField]
-    TMP_Text playerScoreDisplay;
+    public TMP_Text playerScoreDisplay;
     [SerializeField]
-    TMP_Text[] highScoreDisplays;
+    public TMP_Text[] highScoreDisplays;
     [SerializeField]
-    TMP_Text[] highScoreNameDisplays;
+    public TMP_Text[] highScoreNameDisplays;
     [SerializeField]
-    bool highScoreAcheived = false;
+    public bool highScoreAchieved = false;
     [SerializeField]
     int playerScore;
     [SerializeField]
@@ -43,8 +38,8 @@ public class HighScore : MonoBehaviour
         //Declare Varibles
         int newScore;
         string newName;
-        int highScore = 0;
-        string highScoreName = null;
+        int highScore;
+        string highScoreName;
 
         //READ playerScore and playerName variables from Unity PlayerPrefs
         int playerScore = PlayerPrefs.GetInt("playerScore");
@@ -55,7 +50,7 @@ public class HighScore : MonoBehaviour
         newName = playerName;
 
         //FOR scoreIndex from 0 to 2
-        for (int scoreIndex = 0; scoreIndex <= 2; scoreIndex++)
+        for (int scoreIndex = 0; scoreIndex < 2; scoreIndex++)
         {
 
             //READ highScore and highScoreName variables from Unity PlayerPrefs using the scoreIndex
@@ -63,17 +58,14 @@ public class HighScore : MonoBehaviour
             highScoreName = PlayerPrefs.GetString("highScoreName" + scoreIndex);
 
             //IF newScore is greater than highScore THEN
-            if (newScore >= highScore)
+            if (newScore > highScore)
             {
                 //SET highScoreAchieved to true
-                highScoreAcheived = true;
+                highScoreAchieved = true;
 
                 //WRITE newScore and newScoreName variables into Unity PlayerPrefs for the high score and high score name at this scoreIndex.
-                PlayerPrefs.SetInt("highScore" + scoreIndex, highScore);
-                PlayerPrefs.SetString("highScoreName" + scoreIndex, highScoreName);
-
-                PlayerPrefs.SetInt("playerScore", newScore);
-                PlayerPrefs.SetString("playerName", newName);
+                PlayerPrefs.SetInt("highScore" + scoreIndex, newScore);
+                PlayerPrefs.SetString("highScoreName" + scoreIndex, newName);
 
                 //SET newScore equal to highScore
                 newScore = highScore;
@@ -89,14 +81,13 @@ public class HighScore : MonoBehaviour
     public void DisplayData()
     {
         //Declare Varibles
-        int index;
-        int score;
-        string name;
         int highScore;
         string highScoreName;
+        string playerName = PlayerPrefs.GetString("playerName");
+        int playerScore = PlayerPrefs.GetInt("playerScore");
 
         //IF highScoreAchieved is true
-        if (highScoreAcheived)
+        if (highScoreAchieved == true)
         {
 
             //DISPLAY “Congratulations! You got a new high score!” to the messageDisplay text object.
@@ -108,34 +99,36 @@ public class HighScore : MonoBehaviour
             messageDisplay.text = "Better luck next time!";
         }
 
-        //FOR scoreIndex from 0 to 2
-        for (int scoreIndex = 0; scoreIndex <= 2; scoreIndex++)
-        {
-
-            //READ highScore and highScoreName variables from Unity PlayerPrefs using the scoreIndex
-            //CALL DisplayScore() with scoreIndex, highScore, and highScoreName
-            highScore = PlayerPrefs.GetInt("highScore" + scoreIndex);
-            highScoreName = PlayerPrefs.GetString("highScoreName" + scoreIndex);
-            DisplayScore(scoreIndex, playerScore, playerName);
-        }
-        playerScore = PlayerPrefs.GetInt("playerScore");
-        playerName = PlayerPrefs.GetString("playerName");
+        
         //DISPLAY playerName and playerScore to the playerNameDisplay and playerScoreDisplay text objects
         playerNameDisplay.text = playerName;
         playerScoreDisplay.text = playerScore.ToString();
 
+        //FOR scoreIndex from 0 to 2
+        for (int scoreIndex = 0; scoreIndex <= 2; scoreIndex++)
+        {
+            //READ highScore and highScoreName variables from Unity PlayerPrefs using the scoreIndex
+            highScore = PlayerPrefs.GetInt("highScore" + scoreIndex);
+            highScoreName = PlayerPrefs.GetString("highScoreName" + scoreIndex);
+            //CALL DisplayScore() with scoreIndex, highScore, and highScoreName
+            DisplayScore(scoreIndex, highScore, highScoreName);
+        }
     }
 
-    public void DisplayScore(int scoreIndex, int score, string playerName)
+    public void DisplayScore(int scoreIndex, int highScore, string highScoreName)
     {
-        if (scoreIndex >= 0 && scoreIndex <= 2)
+        //IF score is greater than 0
+        if (scoreIndex > 0)
         {
-            highScoreDisplays[scoreIndex].text = score.ToString();
+            //DISPLAY score to the highScoreDisplays at index
+            highScoreDisplays[scoreIndex].text = highScore.ToString();
         }
         else
         {
+            //DISPLAY the empty string to the highScoreDisplays at index.
             highScoreDisplays[scoreIndex].text = null;
         }
-        highScoreNameDisplays[scoreIndex].text = name;
+        //DISPLAY name to the highScoreNameDisplays at index
+        highScoreNameDisplays[scoreIndex].text = highScoreName;
     }
 }

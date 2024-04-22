@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 77288852}
   - component: {fileID: 77288851}
   m_Layer: 5
-  m_Name: Score Input
+  m_Name: 1 Score Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 443283669}
   - component: {fileID: 443283668}
   - component: {fileID: 443283667}
-  - component: {fileID: 443283666}
+  - component: {fileID: 443283671}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -855,26 +855,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &443283666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443283665}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8621f9361b80a347ac09bca1935bb0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerScore: {fileID: 1613219732}
-  playerName: {fileID: 995446303}
-  highScore0: {fileID: 1240566685}
-  highScoreName0: {fileID: 1609742523}
-  highScore1: {fileID: 77288851}
-  highScoreName1: {fileID: 1542658181}
-  highScore2: {fileID: 631492068}
-  highScoreName2: {fileID: 677639198}
 --- !u!114 &443283667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -960,6 +940,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &443283671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443283665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8621f9361b80a347ac09bca1935bb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerScore: {fileID: 1613219732}
+  playerName: {fileID: 995446303}
+  highScore0: {fileID: 1240566685}
+  highScoreName0: {fileID: 1609742523}
+  highScore1: {fileID: 77288851}
+  highScoreName1: {fileID: 1542658181}
+  highScore2: {fileID: 631492068}
+  highScoreName2: {fileID: 677639198}
 --- !u!1 &491201223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,7 +1044,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 443283666}
+      - m_Target: {fileID: 443283671}
         m_TargetAssemblyTypeName: Setup, Assembly-CSharp
         m_MethodName: Save
         m_Mode: 1
@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 631492069}
   - component: {fileID: 631492068}
   m_Layer: 5
-  m_Name: Score Input
+  m_Name: 2 Score Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 677639199}
   - component: {fileID: 677639198}
   m_Layer: 5
-  m_Name: Name Input
+  m_Name: 2 Name Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2214,7 +2214,7 @@ GameObject:
   - component: {fileID: 825248900}
   - component: {fileID: 825248899}
   m_Layer: 5
-  m_Name: Name Label
+  m_Name: 0 Name Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2349,7 +2349,7 @@ GameObject:
   - component: {fileID: 825504870}
   - component: {fileID: 825504869}
   m_Layer: 5
-  m_Name: Score Label
+  m_Name: 0 Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2485,7 +2485,7 @@ GameObject:
   - component: {fileID: 995446304}
   - component: {fileID: 995446303}
   m_Layer: 5
-  m_Name: Name Input
+  m_Name: Player Name Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2795,7 +2795,7 @@ GameObject:
   - component: {fileID: 1139760289}
   - component: {fileID: 1139760288}
   m_Layer: 5
-  m_Name: Name Label
+  m_Name: 2 Name Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3119,7 +3119,7 @@ GameObject:
   - component: {fileID: 1240566686}
   - component: {fileID: 1240566685}
   m_Layer: 5
-  m_Name: Score Input
+  m_Name: 0 Score Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3450,7 +3450,7 @@ GameObject:
   - component: {fileID: 1368789813}
   - component: {fileID: 1368789812}
   m_Layer: 5
-  m_Name: Name Label
+  m_Name: Player Name Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3862,7 +3862,7 @@ GameObject:
   - component: {fileID: 1491792237}
   - component: {fileID: 1491792236}
   m_Layer: 5
-  m_Name: Score Label
+  m_Name: 2 Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4133,7 +4133,7 @@ GameObject:
   - component: {fileID: 1542658182}
   - component: {fileID: 1542658181}
   m_Layer: 5
-  m_Name: Name Input
+  m_Name: 1 Name Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4349,7 +4349,7 @@ GameObject:
   - component: {fileID: 1609742524}
   - component: {fileID: 1609742523}
   m_Layer: 5
-  m_Name: Name Input
+  m_Name: 0 Name Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4525,7 +4525,7 @@ GameObject:
   - component: {fileID: 1613219733}
   - component: {fileID: 1613219732}
   m_Layer: 5
-  m_Name: Score Input
+  m_Name: Player Score Input
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5335,7 +5335,7 @@ GameObject:
   - component: {fileID: 1736961916}
   - component: {fileID: 1736961915}
   m_Layer: 5
-  m_Name: Score Label
+  m_Name: Player Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5510,7 +5510,7 @@ GameObject:
   - component: {fileID: 1838824018}
   - component: {fileID: 1838824017}
   m_Layer: 5
-  m_Name: Name Label
+  m_Name: 1 Name Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5886,7 +5886,7 @@ GameObject:
   - component: {fileID: 2086657446}
   - component: {fileID: 2086657445}
   m_Layer: 5
-  m_Name: Score Label
+  m_Name: 1 Score Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
