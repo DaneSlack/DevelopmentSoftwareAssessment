@@ -112,7 +112,7 @@ public class HighScore : MonoBehaviour
     public void DisplayScore(int scoreIndex, int highScore, string highScoreName)
     {
         //IF score is greater than 0
-        if (scoreIndex > 0)
+        if (scoreIndex >= 0)
         {
             //DISPLAY score to the highScoreDisplays at index
             highScoreDisplays[scoreIndex].text = highScore.ToString();
@@ -120,7 +120,7 @@ public class HighScore : MonoBehaviour
         else
         {
             //DISPLAY the empty string to the highScoreDisplays at index.
-            highScoreDisplays[scoreIndex].text = null;
+            highScoreDisplays[scoreIndex].text = "Test";
         }
         //DISPLAY name to the highScoreNameDisplays at index
         highScoreNameDisplays[scoreIndex].text = highScoreName;

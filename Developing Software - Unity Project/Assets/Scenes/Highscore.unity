@@ -1031,7 +1031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Score
+  m_text: test
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1982,9 +1982,7 @@ MonoBehaviour:
   - {fileID: 2043889038}
   - {fileID: 1780468627}
   - {fileID: 921135301}
-  highScoreAcheived: 0
-  playerScore: 0
-  playerName: 
+  highScoreAchieved: 0
 --- !u!1 &2043889035
 GameObject:
   m_ObjectHideFlags: 0
